@@ -34,7 +34,7 @@ def get_job_opportunity(browser, job_id):
 
 def main():
 
-    browser = webdriver.Firefox()
+    browser = webdriver.PhantomJS(executable_path='./phantomjs/bin/phantomjs')
     browser.get('http://www.apinfo.com')
     print("[+] The bot is starting!")
 
@@ -48,7 +48,7 @@ def main():
     for job_id in reversed(range(latest_id_int)):
         get_job_opportunity(browser, job_id)
     """
-    start_id = int("46020")
+    start_id = int("48850")
     for job_id in range(start_id, 94649, 1):
         get_job_opportunity(browser, job_id)
 
